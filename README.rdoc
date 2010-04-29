@@ -1,0 +1,19 @@
+= Vkontakte API wrapper plugin for Ruby on Rails framework.
+This is a pre betta :)
+= Example usage
+== First
+Generate configuration file
+  rake vkontakte:create_yml
+Edit generated vkontakte YAML file in config directory.
+== Second
+Create Vkontakte::API object using params hash and execute API method
+In controller:
+  # Initialize Vkontakte::API object from request params array
+  api = Vkontakte::API.new params
+  # Fire valid Vkontakte API method with required params
+  @res = api.getProfiles :uids => <comma separated user ids>
+  # @res is a hash from XML respond
+=References
+* {FLASH API club}[http://vkontakte.ru/club1]
+* {API documentation}[http://vkontakte.ru/pages.php?o=-1&p=%C4%EE%EA%F3%EC%E5%ED%F2%E0%F6%E8%FF%20API%20%C2%CA%EE%ED%F2%E0%EA%F2%E5]
+* {API methods description}[http://vkontakte.ru/pages.php?o=-1&p=%CE%EF%E8%F1%E0%ED%E8%E5%20%EC%E5%F2%EE%E4%EE%E2%20API]
